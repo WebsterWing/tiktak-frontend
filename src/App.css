@@ -37,6 +37,12 @@ body {
   color: #444;
   cursor: default;
 }
+
+footer {
+  background-color: #444;
+  min-height: 5rem;
+  padding: 1rem 1rem 1rem 1rem;
+}
  
 @media screen and (min-width: 600px) {
   .nav li {
