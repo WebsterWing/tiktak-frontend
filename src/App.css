@@ -1,9 +1,11 @@
 * { margin: 0; padding: 0; }
 
 body {
-  margin: 0;
+  font: 14px "Century Gothic", Futura, sans-serif;
+  margin: 20px;
   padding: 0;
   background: #ccc;
+  min-height: 100%;
 }
  
 .nav ul {
@@ -42,6 +44,7 @@ footer {
   background-color: #444;
   min-height: 5rem;
   padding: 1rem 1rem 1rem 1rem;
+  color: #fff;
 }
  
 @media screen and (min-width: 600px) {
@@ -72,4 +75,33 @@ footer {
     background-color: #444;
   }
   */
+}
+
+h1 {
+  border-bottom: 3px solid #444;
+  margin: .5rem 0;
+}
+
+.board {
+  display: grid;
+  height: 45vw;
+  width: 45vw;
+  grid-template-columns: 1fr 1fr 1fr;
+  margin: 2rem 0;
+  border: 2px solid #444;
+}
+
+.square {
+  border: 2px solid #444;
+  box-sizing: border-box;
+  font-size: 10vw;
+  height: 15vw;
+}
+
+.X {
+  color: red;
+}
+
+.O {
+  color: green;
 }

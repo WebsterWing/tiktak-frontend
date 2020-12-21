@@ -1,10 +1,10 @@
 import React, { useState } from 'react'
-import useGameSearch from '../../useGameSearch'
+import useGameSearch from '../useGameSearch'
 import { Waypoint } from 'react-waypoint'
 
 
 export default function GameListPage() {
-  const [pageNumber, setPageNumber] = useState(1)
+  const [pageNumber, setPageNumber] = useState(0)
   const { 
     games,
     loading,
@@ -24,7 +24,7 @@ export default function GameListPage() {
         </li>
       ))}
     </ul>
-    {hasMore && <Waypoint onEnter={() => setPageNumber(p => p + 1)} />}
+    {hasMore && !loading && <Waypoint onEnter={() => setPageNumber(p => p + 1)} />}
     {loading && <div>Loading...</div>}
     {error && <div>ERROR</div>}
     </>

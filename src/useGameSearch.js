@@ -2,7 +2,7 @@ import { useState, useEffect} from 'react'
 import {getGames} from './API'
 
 export default function useGameSearch(pageNumber, query = null) {
-  const [loading, setLoading] = useState(true)
+  const [loading, setLoading] = useState(false)
   const [error, setError] = useState(false)
   const [games, setGames] = useState([])
   const [hasMore, setHasMore] = useState(true)
