@@ -16,6 +16,11 @@ export default function Game() {
     setXIsNext(!xIsNext)
   }
 
+  const reset = () => {
+    setMoves([])
+    setXIsNext(true)
+  }
+
   return (
     <>
 
@@ -27,6 +32,7 @@ export default function Game() {
     {!winner && `${xIsNext ? 'X' : 'O'} plays now`}
     {winner && `🥳${winner} HAS WON🥳`}
     </h3>
+    <button onClick={reset}>reset</button>
     </>
   )
 }

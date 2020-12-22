@@ -1,9 +1,9 @@
 import axios from 'axios'
 
-const api_link = 'http://tiktakapi-env.eba-n3itxxtb.us-east-2.elasticbeanstalk.com'
+const api_link = 'http://localhost:8080'
 const ARTIFICAL_DELAY = 400 // Artifical API delay in milliseconds
 
-export async function getGames(page, query= {}) {
+export async function getFakeGames(page, query= {}) {
   await new Promise(resolve => setTimeout(resolve, ARTIFICAL_DELAY))
 
   if (page > 3) {
@@ -17,6 +17,10 @@ export async function getGames(page, query= {}) {
   }
 
   return games_list;
+}
+
+export async function getGames(page, query= {}) {
+  return axios.get(`${api_link}/games?page=${page+1}`).then(res => res.data)
 }
 
 function generateGame() {
