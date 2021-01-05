@@ -5,8 +5,8 @@ import {
   Route
 } from 'react-router-dom'
 
-import GameListPage from './pages/GameListPage'
-import LoginPage from './pages/LoginPage'
+//import GameListPage from './pages/GameListPage'
+//import LoginPage from './pages/LoginPage'
 import GameplayPage from './pages/GameplayPage'
 
 import Navbar from './components/Navbar'
@@ -18,14 +18,16 @@ function App() {
       <Navbar />
       <Switch>
         <Route exact path="/">
-          <GameListPage/>
+          <GameplayPage/>
         </Route>
+        {/*
         <Route path="/login">
           <LoginPage/>
         </Route>
         <Route path="/play">
           <GameplayPage/>
         </Route>
+        */}
       </Switch>
       <Footer />
     </Router>
