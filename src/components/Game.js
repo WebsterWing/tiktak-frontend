@@ -30,6 +30,14 @@ export default function Game() {
     }
   }
 
+  const reset = () => {
+    axios.get('/reset').then(res => {
+      console.log(res)
+    }).catch(err => {
+      console.log(err)
+    })
+  }
+
   useEffect(() => {
     console.log('setting up listener')
     // Listener must be declared seperately so that it can be cleaned up
@@ -46,6 +54,7 @@ export default function Game() {
     <button className={`sideToggle ${side}`} onClick={changeSide}>
       You are on side {side} (click to change)
     </button>
+    <button onClick={reset}>RESET</button>
     <Board 
       onClick={onClick}
       squares={squares}
