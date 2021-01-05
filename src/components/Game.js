@@ -54,7 +54,7 @@ export default function Game() {
     <button className={`sideToggle ${side}`} onClick={changeSide}>
       You are on side {side} (click to change)
     </button>
-    <button onClick={reset}>RESET</button>
+    <button className="resetBtn" onClick={reset}>RESET</button>
     <Board 
       onClick={onClick}
       squares={squares}

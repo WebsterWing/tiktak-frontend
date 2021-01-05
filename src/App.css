@@ -114,3 +114,9 @@ h1 {
   padding: 3px;
   display: block;
 }
+
+.resetBtn {
+  font-size: large;
+  margin: 2px auto;
+  display: block;
+}
