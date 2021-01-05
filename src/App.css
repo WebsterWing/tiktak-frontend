@@ -84,24 +84,33 @@ h1 {
 
 .board {
   display: grid;
-  height: 45vw;
-  width: 45vw;
+  height: 30vw;
+  width: 30vw;
   grid-template-columns: 1fr 1fr 1fr;
-  margin: 2rem 0;
+  margin: 2rem auto;
   border: 2px solid #444;
 }
 
 .square {
   border: 2px solid #444;
   box-sizing: border-box;
-  font-size: 10vw;
-  height: 15vw;
+  font-size: 7vw;
+  height: 10vw;
 }
 
 .X {
-  color: red;
+  color: rgb(233, 75, 75);
 }
 
 .O {
-  color: green;
+  color: rgb(60, 209, 60);
+}
+
+.sideToggle {
+  font-size: large;
+  margin: 2px auto;
+  background-color: #dae7ee;
+  border: none;
+  padding: 3px;
+  display: block;
 }
