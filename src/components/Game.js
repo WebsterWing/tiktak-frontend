@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
-import axios from 'axios'
 import Board from './Board'
 import socket from '../socket'
+import API from '../API'
 
 export default function Game() {
   const [moves, setMoves] = useState([])
@@ -10,16 +10,7 @@ export default function Game() {
   const [winner, setWinner] = useState(null)
 
   const onClick = i => {
-    axios.post('/move', 
-      {
-        move: {value: side, square: i, sequence_num: moves.length},
-        id: "placeholder-uuid",
-      }
-    ).then(res => {
-      console.log(res)
-    }).catch(err => {
-      console.log(err)
-    })
+    API.move(side, i, moves.length)
   }
 
   const changeSide = () => {
@@ -28,14 +19,6 @@ export default function Game() {
     } else {
       setSide('X')
     }
-  }
-
-  const reset = () => {
-    axios.get('/reset').then(res => {
-      console.log(res)
-    }).catch(err => {
-      console.log(err)
-    })
   }
 
   useEffect(() => {
@@ -54,7 +37,7 @@ export default function Game() {
     <button className={`sideToggle ${side}`} onClick={changeSide}>
       You are on side {side} (click to change)
     </button>
-    <button className="resetBtn" onClick={reset}>RESET</button>
+    <button className="resetBtn" onClick={API.reset}>RESET</button>
     <Board 
       onClick={onClick}
       squares={squares}
