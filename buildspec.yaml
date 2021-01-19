@@ -2,8 +2,8 @@ version: 0.2
 
 env:
   shell: bash
-  variables:
-    REACT_APP_API_ENDPOINT: "http://ec2-3-16-83-172.us-east-2.compute.amazonaws.com:8080"
+  exported-variables:
+    - REACT_APP_API_ENDPOINT
 phases:
   install:
     runtime-versions:
@@ -16,6 +16,10 @@ phases:
     commands:
       - echo Building
       - npm run build
+        # post-build:
+        #   commands:
+        #     - echo Zipping artifacts
+        #     - npm run build
 
 artifacts:
   files:
