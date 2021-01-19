@@ -1,0 +1,25 @@
+version: 0.2
+
+env:
+  shell: bash
+  variables:
+    REACT_APP_API_ENDPOINT: "http://ec2-3-16-83-172.us-east-2.compute.amazonaws.com:8080"
+  parameter-store:
+  secrets-manager:
+
+phases:
+  install:
+    runtime-versions:
+      nodejs: latest
+  pre-build:
+    commands:
+      - echo Installing Dependencies
+      - npm install
+  build:
+    commands:
+      - echo Building
+      - npm run build
+
+artifacts:
+  files:
+    - build/**/*
