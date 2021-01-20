@@ -21,8 +21,8 @@ phases:
         #     - echo Zipping artifacts
         #     - npm run build
         #
-  batch:
-    fast-fail: true
+        # batch:
+        #   fast-fail: true
 
 artifacts:
   files:
