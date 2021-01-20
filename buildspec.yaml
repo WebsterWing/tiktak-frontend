@@ -16,15 +16,15 @@ phases:
     commands:
       - echo Building
       - npm run build
-        # post-build:
-        #   commands:
-        #     - echo Zipping artifacts
-        #     - npm run build
+  post-build:
+    commands:
+      - echo Zipping artifacts
+      - cd build
+      - zip -r ../build.zip *
         #
         # batch:
         #   fast-fail: true
 
 artifacts:
   files:
-    - '**/*'
-  base-directory: 'build'
+    - build.zip
