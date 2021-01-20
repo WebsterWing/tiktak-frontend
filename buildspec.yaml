@@ -16,7 +16,7 @@ phases:
     commands:
       - echo Building
       - npm run build
-  post-build:
+  post_build:
     commands:
       - echo Zipping artifacts
       - cd build
